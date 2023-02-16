@@ -216,9 +216,9 @@ class _RegisterPageState extends State<RegisterPage> {
                       //   // Process data.
                       // }
                     },
-                    style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStatePropertyAll<Color>(redColorTheme)),
+                    // style: ButtonStyle(
+                    //     backgroundColor:
+                    //         MaterialStatePropertyAll<Color>(redColorTheme)),
                     child: Text(
                       'Register',
                       style: TextStyle(

@@ -4,14 +4,14 @@ import 'package:alumni_forum_app/helper/custom_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class FeedPage extends StatefulWidget {
+  const FeedPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<FeedPage> createState() => _FeedPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _FeedPageState extends State<FeedPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

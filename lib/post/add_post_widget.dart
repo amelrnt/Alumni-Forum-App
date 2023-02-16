@@ -2,14 +2,14 @@ import 'package:alumni_forum_app/helper/custom_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class AddPostPage extends StatefulWidget {
-  const AddPostPage({super.key});
+class AddPostWidget extends StatefulWidget {
+  const AddPostWidget({super.key});
 
   @override
-  State<AddPostPage> createState() => _AddPostPageState();
+  State<AddPostWidget> createState() => _AddPostWidgetState();
 }
 
-class _AddPostPageState extends State<AddPostPage> {
+class _AddPostWidgetState extends State<AddPostWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

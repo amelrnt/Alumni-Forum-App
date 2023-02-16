@@ -1,28 +1,26 @@
-import 'package:alumni_forum_app/app_bar/default_app_bar.dart';
-import 'package:alumni_forum_app/app_bar/search_app_bar.dart';
 import 'package:alumni_forum_app/helper/custom_theme.dart';
-import 'package:alumni_forum_app/pages/add_post_page.dart';
-import 'package:alumni_forum_app/pages/home_page.dart';
-import 'package:alumni_forum_app/pages/notification_page.dart';
-import 'package:alumni_forum_app/pages/profile_page.dart';
-import 'package:alumni_forum_app/pages/search_page.dart';
+import 'package:alumni_forum_app/helper/general_widget.dart';
+import 'package:alumni_forum_app/notification/notification_page.dart';
+import 'package:alumni_forum_app/post/add_post_widget.dart';
+import 'package:alumni_forum_app/profile/profile_page.dart';
+import 'package:alumni_forum_app/search/search_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 // import 'package:flutter/cupertino.dart';
 
-class TemplatePage extends StatefulWidget {
-  const TemplatePage({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<TemplatePage> createState() => _TemplatePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _TemplatePageState extends State<TemplatePage> {
+class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
   final List _children = [
     HomePage(),
     SearchPage(),
-    AddPostPage(),
+    AddPostWidget(),
     NotificationPage(),
     ProfilePage()
   ];
@@ -104,12 +102,12 @@ class _TemplatePageState extends State<TemplatePage> {
 
   PreferredSizeWidget _buildAppBar() {
     if (_currentIndex == 1) {
-      return SearchAppBar(
-        hintTextAppBar: _appBarTitle[_currentIndex],
+      return defaultSearchBar(
+        hint: _appBarTitle[_currentIndex],
       );
     } else {
-      return DefaultAppBar(
-        appBarTitle: _appBarTitle[_currentIndex],
+      return defaultAppBar(
+        title: _appBarTitle[_currentIndex],
       );
     }
   }

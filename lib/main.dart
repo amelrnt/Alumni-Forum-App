@@ -1,3 +1,4 @@
+import 'package:alumni_forum_app/localization/AppLocalizations.dart';
 import 'package:alumni_forum_app/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,6 +16,11 @@ class AlumniApp extends StatelessWidget {
     return MaterialApp(
       // title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+      ],
+      // locale: language.appLocal,
+      supportedLocales: const [Locale('en', 'US'), Locale('id', 'ID')],
       theme: ThemeData(textTheme: GoogleFonts.poppinsTextTheme()),
       home: const SplashScreen(),
     );
