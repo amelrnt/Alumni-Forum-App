@@ -1,12 +1,11 @@
+import 'package:flutter/material.dart';
 import 'package:alumni_forum_app/helper/custom_theme.dart';
 import 'package:alumni_forum_app/helper/general_widget.dart';
 import 'package:alumni_forum_app/notification/notification_page.dart';
 import 'package:alumni_forum_app/post/add_post_widget.dart';
 import 'package:alumni_forum_app/profile/profile_page.dart';
 import 'package:alumni_forum_app/search/search_page.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:flutter/cupertino.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

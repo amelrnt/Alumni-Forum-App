@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:alumni_forum_app/authentication/sign_in.dart';
+// import 'package:alumni_forum_app/authentication/sign_in.dart';
 import 'package:alumni_forum_app/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -16,8 +16,8 @@ class _SplashScreenState extends State<SplashScreen> {
   startSplashScreen() async {
     var duration = const Duration(seconds: 3);
     return Timer(duration, () {
-      Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: ((context) => HomePage())));
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: ((context) => const HomePage())));
       // Navigator.of(context).pushReplacement(
       //     MaterialPageRoute(builder: ((context) => SignInPage())));
     });
@@ -57,7 +57,9 @@ class _SplashScreenState extends State<SplashScreen> {
           SizedBox(
             height: 81,
           ),
-          SvgPicture.asset('assets/app_logo.svg'),
+          SvgPicture.asset(
+            'assets/app_logo.svg',
+          ),
           SizedBox(
             height: 150,
           ),
