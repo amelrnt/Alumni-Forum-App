@@ -17,7 +17,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
   final List _children = [
-    HomePage(),
+    HomePageContent(
+      title: "Home Page",
+    ),
     SearchPage(),
     AddPostWidget(),
     NotificationPage(),
@@ -37,7 +39,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: redColorTheme,
+      backgroundColor: grayColorTheme,
       appBar: _buildAppBar(),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -109,5 +111,18 @@ class _HomePageState extends State<HomePage> {
         title: _appBarTitle[_currentIndex],
       );
     }
+  }
+}
+
+class HomePageContent extends StatelessWidget {
+  final String title;
+
+  HomePageContent({required this.title});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text(title),
+    );
   }
 }

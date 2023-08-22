@@ -15,7 +15,7 @@ class _ProfilePageState extends State<ProfilePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [Text("Add Post Page")],
+          children: [Text("Profile Page")],
         ),
       ),
     );
