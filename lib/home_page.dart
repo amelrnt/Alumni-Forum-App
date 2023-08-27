@@ -1,3 +1,4 @@
+import 'package:alumni_forum_app/post/card_post.dart';
 import 'package:flutter/material.dart';
 import 'package:alumni_forum_app/helper/custom_theme.dart';
 import 'package:alumni_forum_app/helper/general_widget.dart';
@@ -39,7 +40,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: grayColorTheme,
+      backgroundColor: redColorTheme,
       appBar: _buildAppBar(),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -106,10 +107,10 @@ class _HomePageState extends State<HomePage> {
       return defaultSearchBar(
         hint: _appBarTitle[_currentIndex],
       );
+    } else if (_currentIndex == 4) {
+      return defaultAppBar(title: _appBarTitle[_currentIndex], elevation: 0.0);
     } else {
-      return defaultAppBar(
-        title: _appBarTitle[_currentIndex],
-      );
+      return defaultAppBar(title: _appBarTitle[_currentIndex], elevation: 10.0);
     }
   }
 }
@@ -122,7 +123,19 @@ class HomePageContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text(title),
+      child: ListView.builder(
+        itemBuilder: (context, index) {
+          // Determine whether to add padding to top, bottom, or both
+          final double topSpace = (index == 0) ? 0.0 : 4.0;
+          final double bottomSpace = (index == 4) ? 0.0 : 4.0;
+
+          return CardPost(
+            topSpace: topSpace,
+            bottomSpace: bottomSpace,
+          );
+        },
+        itemCount: 5,
+      ),
     );
   }
 }

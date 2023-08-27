@@ -3,12 +3,15 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 
-PreferredSizeWidget defaultAppBar({required String title}) {
+PreferredSizeWidget defaultAppBar(
+    {required String title, required double elevation}) {
   return PreferredSize(
     preferredSize: const Size.fromHeight(kToolbarHeight),
     child: AppBar(
+      automaticallyImplyLeading: false,
       centerTitle: true,
       backgroundColor: redColorTheme,
+      elevation: elevation,
       title: Text(
         title,
         style: TextStyle(
@@ -27,6 +30,7 @@ PreferredSizeWidget defaultSearchBar({required String hint}) {
   return PreferredSize(
     preferredSize: const Size.fromHeight(kToolbarHeight),
     child: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: redColorTheme,
         title: Center(
           child: SizedBox(

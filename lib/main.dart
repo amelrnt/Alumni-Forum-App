@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:alumni_forum_app/localization/AppLocalizations.dart';
 import 'package:alumni_forum_app/splash_screen.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -13,6 +16,10 @@ class AlumniApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // FlutterError.onError = (details) {
+    //   FlutterError.presentError(details);
+    //   if (kReleaseMode) exit(1);
+    // };
     return MaterialApp(
       // title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,

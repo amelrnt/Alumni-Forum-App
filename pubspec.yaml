@@ -39,6 +39,7 @@ dependencies:
   flutter_bloc: ^8.1.2
   flutter_svg: ^1.1.6
   google_fonts: ^4.0.4
+  flutter_sticky_widgets: ^0.0.3
 
 
 dev_dependencies:
@@ -75,6 +76,8 @@ flutter:
     - assets/option_button.svg
     - assets/selected_add_post.png
     - assets/add_post.png
+    - assets/profile_forum_plus_clicked.png
+    - assets/profile_forum_plus_unclicked.png
     - i18n/en.json
     - i18n/id.json
 
