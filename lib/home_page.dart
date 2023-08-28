@@ -1,12 +1,12 @@
+import 'package:alumni_forum_app/post/card_post.dart';
+import 'package:flutter/material.dart';
 import 'package:alumni_forum_app/helper/custom_theme.dart';
 import 'package:alumni_forum_app/helper/general_widget.dart';
 import 'package:alumni_forum_app/notification/notification_page.dart';
 import 'package:alumni_forum_app/post/add_post_widget.dart';
 import 'package:alumni_forum_app/profile/profile_page.dart';
 import 'package:alumni_forum_app/search/search_page.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:flutter/cupertino.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -18,7 +18,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
   final List _children = [
-    HomePage(),
+    HomePageContent(
+      title: "Home Page",
+    ),
     SearchPage(),
     AddPostWidget(),
     NotificationPage(),
@@ -105,10 +107,35 @@ class _HomePageState extends State<HomePage> {
       return defaultSearchBar(
         hint: _appBarTitle[_currentIndex],
       );
+    } else if (_currentIndex == 4) {
+      return defaultAppBar(title: _appBarTitle[_currentIndex], elevation: 0.0);
     } else {
-      return defaultAppBar(
-        title: _appBarTitle[_currentIndex],
-      );
+      return defaultAppBar(title: _appBarTitle[_currentIndex], elevation: 10.0);
     }
+  }
+}
+
+class HomePageContent extends StatelessWidget {
+  final String title;
+
+  HomePageContent({required this.title});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: ListView.builder(
+        itemBuilder: (context, index) {
+          // Determine whether to add padding to top, bottom, or both
+          final double topSpace = (index == 0) ? 0.0 : 4.0;
+          final double bottomSpace = (index == 4) ? 0.0 : 4.0;
+
+          return CardPost(
+            topSpace: topSpace,
+            bottomSpace: bottomSpace,
+          );
+        },
+        itemCount: 5,
+      ),
+    );
   }
 }
