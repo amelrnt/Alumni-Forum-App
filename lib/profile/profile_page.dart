@@ -1,3 +1,4 @@
+import 'package:alumni_forum_app/forum/my_forum_list.dart';
 import 'package:alumni_forum_app/helper/custom_theme.dart';
 import 'package:alumni_forum_app/post/card_post.dart';
 import 'package:flutter/material.dart';
@@ -365,12 +366,16 @@ class _ProfileInfoState extends State<ProfileInfo> {
                             borderRadius: BorderRadius.all(Radius.circular(5))),
                         child: GestureDetector(
                           onTap: () {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                content: Text("Forum Saya button clicked!"),
-                                duration: Duration(seconds: 2),
-                              ),
-                            );
+                            // ScaffoldMessenger.of(context).showSnackBar(
+                            //   const SnackBar(
+                            //     content: Text("Forum Saya button clicked!"),
+                            //     duration: Duration(seconds: 2),
+                            //   ),
+                            // );
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => MyForumList()));
                           },
                           child: Center(
                             child: Text(
