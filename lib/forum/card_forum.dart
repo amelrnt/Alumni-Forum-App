@@ -29,13 +29,15 @@ class _CardForumState extends State<CardForum> {
             },
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 SvgPicture.asset(
                   'assets/profile_icon.svg',
                   width: 50,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                Container(
+                  width: 230,
+                  padding: const EdgeInsets.only(left: 10),
                   child: Text(
                     widget.forumName,
                     style: TextStyle(
