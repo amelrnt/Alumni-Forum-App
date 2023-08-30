@@ -432,7 +432,7 @@ class _ChangeForumPrivacyState extends State<ChangeForumPrivacy> {
           Container(
             width: 200,
             child: Text(
-              "Ubah menjadi forum pribadi",
+              "Ubah menjadi forum privat",
               style: TextStyle(
                   color: darkRedColorTheme,
                   fontSize: 13,
