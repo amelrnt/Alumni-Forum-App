@@ -15,17 +15,35 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   int _currentIndex = 0;
-  final List _children = [
-    HomePageContent(
-      title: "Home Page",
-    ),
-    SearchPage(),
-    AddPostWidget(),
-    NotificationPage(),
-    ProfilePage()
-  ];
+
+  late TabController _tabController; // Use late here
+
+  late final List<dynamic> _children; // Use late here
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController =
+        TabController(vsync: this, length: 2); // Define the number of tabs
+
+    _children = [
+      HomePageContent(
+        title: "Home Page",
+      ),
+      SearchPage(tabController: _tabController),
+      AddPostWidget(),
+      NotificationPage(),
+      ProfilePage()
+    ];
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
 
   final _appBarTitle = [
     "Forum Alumni Teknik Mesin",
@@ -59,44 +77,45 @@ class _HomePageState extends State<HomePage> {
         // unselectedIconTheme: IconThemeData(color: notSelectedIconTheme),
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home,
-                color: _currentIndex == 0
-                    ? silverColorTheme
-                    : notSelectedIconTheme,
-              ),
-              label: "Home"),
+            icon: Icon(
+              Icons.home,
+              color:
+                  _currentIndex == 0 ? silverColorTheme : notSelectedIconTheme,
+            ),
+            label: "Home",
+          ),
           BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                'assets/search_icon.svg',
-                color: _currentIndex == 1
-                    ? silverColorTheme
-                    : notSelectedIconTheme,
-              ),
-              label: "Search"),
+            icon: SvgPicture.asset(
+              'assets/search_icon.svg',
+              color:
+                  _currentIndex == 1 ? silverColorTheme : notSelectedIconTheme,
+            ),
+            label: "Search",
+          ),
           BottomNavigationBarItem(
-              icon: _currentIndex == 2
-                  ? Image.asset('assets/selected_add_post.png')
-                  : Image.asset(
-                      'assets/add_post.png',
-                    ),
-              label: "Add Post"),
+            icon: _currentIndex == 2
+                ? Image.asset('assets/selected_add_post.png')
+                : Image.asset(
+                    'assets/add_post.png',
+                  ),
+            label: "Add Post",
+          ),
           BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                'assets/notification_icon.svg',
-                color: _currentIndex == 3
-                    ? silverColorTheme
-                    : notSelectedIconTheme,
-              ),
-              label: "Notification"),
+            icon: SvgPicture.asset(
+              'assets/notification_icon.svg',
+              color:
+                  _currentIndex == 3 ? silverColorTheme : notSelectedIconTheme,
+            ),
+            label: "Notification",
+          ),
           BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                'assets/profile_icon.svg',
-                color: _currentIndex == 4
-                    ? silverColorTheme
-                    : notSelectedIconTheme,
-              ),
-              label: "Profile"),
+            icon: SvgPicture.asset(
+              'assets/profile_icon.svg',
+              color:
+                  _currentIndex == 4 ? silverColorTheme : notSelectedIconTheme,
+            ),
+            label: "Profile",
+          ),
         ],
       ),
     );
@@ -105,12 +124,20 @@ class _HomePageState extends State<HomePage> {
   PreferredSizeWidget _buildAppBar() {
     if (_currentIndex == 1) {
       return defaultSearchBar(
-        hint: _appBarTitle[_currentIndex],
-      );
+          hint: _appBarTitle[_currentIndex],
+          elevation: 0.0,
+          // vsync: this,
+          tabController: _tabController);
     } else if (_currentIndex == 4) {
-      return defaultAppBar(title: _appBarTitle[_currentIndex], elevation: 0.0);
+      return defaultAppBar(
+        title: _appBarTitle[_currentIndex],
+        elevation: 0.0,
+      );
     } else {
-      return defaultAppBar(title: _appBarTitle[_currentIndex], elevation: 10.0);
+      return defaultAppBar(
+        title: _appBarTitle[_currentIndex],
+        elevation: 10.0,
+      );
     }
   }
 }

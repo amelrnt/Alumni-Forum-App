@@ -30,8 +30,10 @@ class _SignInPageState extends State<SignInPage> {
                         hintText: 'Masukkan Email',
                         hintStyle: TextStyle(
                             fontSize: 12.0, color: Colors.blueGrey[100]),
-                        contentPadding:
-                            EdgeInsets.symmetric(horizontal: 20, vertical: 2),
+                        contentPadding: EdgeInsets.symmetric(
+                          horizontal: 20,
+                          vertical: 2,
+                        ),
                         label: Text(
                           'Email',
                           style: TextStyle(
