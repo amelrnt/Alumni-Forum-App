@@ -24,57 +24,92 @@ PreferredSizeWidget defaultAppBar(
   );
 }
 
-PreferredSizeWidget defaultSearchBar({required String hint}) {
+PreferredSizeWidget defaultSearchBar({
+  required String hint,
+  required double elevation,
+  required TabController tabController,
+}) {
   TextEditingController textEditingController;
 
+  // int _currentTabIndex = tabController.index;
+
+  TabBar _tabBar = TabBar(
+    // indicatorColor: Color(0xffB7A5A5),
+    indicator: BoxDecoration(
+      color: silverColorTheme,
+      // borderRadius: BorderRadius.only(
+      //   topLeft: _currentTabIndex == 1 ? Radius.circular(20) : Radius.zero,
+      //   topRight: _currentTabIndex == 0 ? Radius.circular(20) : Radius.zero,
+      // ),
+    ),
+    labelColor: Colors.black,
+    controller: tabController,
+    tabs: const [
+      Tab(text: 'User'), // First tab
+      Tab(text: 'Forum'), // Second tab
+    ],
+  );
+
   return PreferredSize(
-    preferredSize: const Size.fromHeight(kToolbarHeight),
+    preferredSize: const Size.fromHeight(120.0),
     child: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: redColorTheme,
-        title: Center(
-          child: SizedBox(
-            width: 320,
-            height: 32,
-            child: TextFormField(
-              keyboardType: TextInputType.text,
-              decoration: InputDecoration(
-                  prefixIcon: Align(
-                    widthFactor: 1.0,
-                    heightFactor: 1.0,
-                    child: SvgPicture.asset(
-                      'assets/search_icon.svg',
-                    ),
+      automaticallyImplyLeading: false,
+      backgroundColor: redColorTheme,
+      elevation: elevation,
+      title: Center(
+        child: SizedBox(
+          width: 320,
+          height: 32,
+          child: TextFormField(
+            keyboardType: TextInputType.text,
+            decoration: InputDecoration(
+                prefixIcon: Align(
+                  widthFactor: 1.0,
+                  heightFactor: 1.0,
+                  child: SvgPicture.asset(
+                    'assets/search_icon.svg',
                   ),
-                  hintText: hint,
-                  hintStyle: TextStyle(fontSize: 12.0, color: redColorTheme),
-                  contentPadding: EdgeInsets.symmetric(
-                    horizontal: 20,
-                    vertical: 2,
-                  ),
-                  filled: true,
-                  fillColor: grayColorTheme,
-                  focusColor: grayColorTheme,
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(
-                        color: grayColorTheme,
-                        width: 1,
-                      )),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(
-                        color: grayColorTheme,
-                        width: 1,
-                      )),
-                  focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(
-                        color: grayColorTheme,
-                        width: 1,
-                      ))),
-            ),
+                ),
+                hintText: hint,
+                hintStyle: TextStyle(
+                  fontSize: 12.0,
+                  color: redColorTheme,
+                ),
+                contentPadding: EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 2,
+                ),
+                filled: true,
+                fillColor: grayColorTheme,
+                focusColor: grayColorTheme,
+                enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(
+                      color: grayColorTheme,
+                      width: 1,
+                    )),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(
+                      color: grayColorTheme,
+                      width: 1,
+                    )),
+                focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(
+                      color: grayColorTheme,
+                      width: 1,
+                    ))),
           ),
-        )),
+        ),
+      ),
+      bottom: PreferredSize(
+        preferredSize: _tabBar.preferredSize,
+        child: Container(
+          color: Color(0xffB7A5A5),
+          child: _tabBar,
+        ),
+      ),
+    ),
   );
 }

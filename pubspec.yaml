@@ -40,6 +40,7 @@ dependencies:
   flutter_svg: ^1.1.6
   google_fonts: ^4.0.4
   flutter_sticky_widgets: ^0.0.3
+  scrollable_list_tabview: ^0.1.6
 
 
 dev_dependencies:
