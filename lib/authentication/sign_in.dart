@@ -19,7 +19,10 @@ class _SignInPageState extends State<SignInPage> {
         body: Center(
             child: Form(
           child: Padding(
-            padding: EdgeInsets.only(left: 31, right: 31),
+            padding: const EdgeInsets.only(
+              left: 31,
+              right: 31,
+            ),
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -27,67 +30,95 @@ class _SignInPageState extends State<SignInPage> {
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
-                        hintText: 'Masukkan Email',
-                        hintStyle: TextStyle(
-                            fontSize: 12.0, color: Colors.blueGrey[100]),
-                        contentPadding: EdgeInsets.symmetric(
-                          horizontal: 20,
-                          vertical: 2,
+                      hintText: 'Masukkan Email',
+                      hintStyle: TextStyle(
+                        fontSize: 12.0,
+                        color: Colors.blueGrey[100],
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 2,
+                      ),
+                      label: Text(
+                        'Email',
+                        style: TextStyle(
+                          color: redColorTheme,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
                         ),
-                        label: Text(
-                          'Email',
-                          style: TextStyle(
-                              color: redColorTheme,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w600),
+                      ),
+                      focusColor: redColorTheme,
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(
+                          color: redColorTheme,
+                          width: 1,
                         ),
-                        focusColor: redColorTheme,
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide:
-                                BorderSide(color: redColorTheme, width: 1)),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide:
-                                BorderSide(color: redColorTheme, width: 1)),
-                        focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide:
-                                BorderSide(color: redColorTheme, width: 1))),
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(
+                          color: redColorTheme,
+                          width: 1,
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(
+                          color: redColorTheme,
+                          width: 1,
+                        ),
+                      ),
+                    ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   TextFormField(
                     keyboardType: TextInputType.visiblePassword,
                     decoration: InputDecoration(
-                        hintText: 'Masukkan Kata Sandi',
-                        hintStyle: TextStyle(
-                            fontSize: 12.0, color: Colors.blueGrey[100]),
-                        contentPadding:
-                            EdgeInsets.symmetric(horizontal: 20, vertical: 2),
-                        label: Text(
-                          'Kata Sandi',
-                          style: TextStyle(
-                              color: redColorTheme,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w600),
+                      hintText: 'Masukkan Kata Sandi',
+                      hintStyle: TextStyle(
+                        fontSize: 12.0,
+                        color: Colors.blueGrey[100],
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 2,
+                      ),
+                      label: Text(
+                        'Kata Sandi',
+                        style: TextStyle(
+                          color: redColorTheme,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
                         ),
-                        focusColor: redColorTheme,
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide:
-                                BorderSide(color: redColorTheme, width: 1)),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide:
-                                BorderSide(color: redColorTheme, width: 1)),
-                        focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide:
-                                BorderSide(color: redColorTheme, width: 1))),
+                      ),
+                      focusColor: redColorTheme,
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(
+                          color: redColorTheme,
+                          width: 1,
+                        ),
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(
+                          color: redColorTheme,
+                          width: 1,
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(
+                          color: redColorTheme,
+                          width: 1,
+                        ),
+                      ),
+                    ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 24,
                   ),
                   ElevatedButton(
@@ -104,19 +135,26 @@ class _SignInPageState extends State<SignInPage> {
                     child: Text(
                       'Login',
                       style: TextStyle(
-                          color: silverColorTheme,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w600),
+                        color: silverColorTheme,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.of(context).pushReplacement(MaterialPageRoute(
-                          builder: ((context) => RegisterPage())));
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) => RegisterPage(),
+                        ),
+                      );
                     },
                     child: Text(
                       'Belum memiliki akun? klik di sini',
-                      style: TextStyle(color: redColorTheme, fontSize: 13),
+                      style: TextStyle(
+                        color: redColorTheme,
+                        fontSize: 13,
+                      ),
                     ),
                   )
                 ]),

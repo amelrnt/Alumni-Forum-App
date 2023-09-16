@@ -3,7 +3,6 @@ import 'package:alumni_forum_app/forum/my_forum_list.dart';
 import 'package:alumni_forum_app/helper/custom_theme.dart';
 import 'package:alumni_forum_app/post/card_post.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_sticky_widgets/flutter_sticky_widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -15,7 +14,7 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   ScrollController? _scrollController;
-  late BuildContext _scaffoldContext;
+  // late BuildContext _scaffoldContext;
 
   @override
   void initState() {
@@ -25,7 +24,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
   @override
   Widget build(BuildContext context) {
-    _scaffoldContext = context; // Store the context for later use
+    // _scaffoldContext = context; // Store the context for later use
 
     _scrollController!.addListener(() {
       // double offset = _scrollController!.offset;
@@ -54,7 +53,7 @@ class _ProfilePageState extends State<ProfilePage> {
       body: Column(
         children: [
           // Profile info
-          ProfileInfo(
+          const ProfileInfo(
             name: "Sukijan Froyo",
             role: "Project Manager di PT. Perkasa Utama",
             postCount: 10,
@@ -126,7 +125,11 @@ class _ProfileInfoState extends State<ProfileInfo> {
       height: 300.0,
       color: redColorTheme,
       child: Padding(
-        padding: const EdgeInsets.only(left: 25, right: 25, top: 25),
+        padding: const EdgeInsets.only(
+          left: 25,
+          right: 25,
+          top: 25,
+        ),
         child: Column(
           children: [
             Row(
@@ -137,9 +140,13 @@ class _ProfileInfoState extends State<ProfileInfo> {
                 InkWell(
                   onTap: () {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text("Profile Icon clicked!"),
-                        duration: Duration(seconds: 2),
+                      const SnackBar(
+                        content: Text(
+                          "Profile Icon clicked!",
+                        ),
+                        duration: Duration(
+                          seconds: 2,
+                        ),
                       ),
                     );
                   },
@@ -149,7 +156,7 @@ class _ProfileInfoState extends State<ProfileInfo> {
                     width: 95,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
                 Column(
@@ -158,25 +165,27 @@ class _ProfileInfoState extends State<ProfileInfo> {
                     Text(
                       widget.name,
                       style: TextStyle(
-                          color: silverColorTheme,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w800),
+                        color: silverColorTheme,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w800,
+                      ),
                     ),
                     Text(
                       widget.role,
                       style: TextStyle(
-                          color: silverColorTheme,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400),
+                        color: silverColorTheme,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                   ],
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Row(
@@ -187,15 +196,23 @@ class _ProfileInfoState extends State<ProfileInfo> {
                   width: 85,
                   // padding: EdgeInsets.symmetric(horizontal: 10),
                   decoration: BoxDecoration(
-                      border: Border(
-                          left:
-                              BorderSide(color: silverColorTheme, width: 2.0))),
+                    border: Border(
+                      left: BorderSide(
+                        color: silverColorTheme,
+                        width: 2.0,
+                      ),
+                    ),
+                  ),
                   child: InkWell(
                     onTap: () {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text("Post clicked!"),
-                          duration: Duration(seconds: 2),
+                        const SnackBar(
+                          content: Text(
+                            "Post clicked!",
+                          ),
+                          duration: Duration(
+                            seconds: 2,
+                          ),
                         ),
                       );
                     },
@@ -204,16 +221,18 @@ class _ProfileInfoState extends State<ProfileInfo> {
                         Text(
                           "Post",
                           style: TextStyle(
-                              color: silverColorTheme,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w700),
+                            color: silverColorTheme,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
                         Text(
                           widget.postCount.toString(),
                           style: TextStyle(
-                              color: silverColorTheme,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500),
+                            color: silverColorTheme,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                          ),
                         )
                       ],
                     ),
@@ -224,16 +243,27 @@ class _ProfileInfoState extends State<ProfileInfo> {
                   width: 85,
                   // padding: EdgeInsets.symmetric(horizontal: 10),
                   decoration: BoxDecoration(
-                      border: Border(
-                          left: BorderSide(color: silverColorTheme, width: 2.0),
-                          right:
-                              BorderSide(color: silverColorTheme, width: 2.0))),
+                    border: Border(
+                      left: BorderSide(
+                        color: silverColorTheme,
+                        width: 2.0,
+                      ),
+                      right: BorderSide(
+                        color: silverColorTheme,
+                        width: 2.0,
+                      ),
+                    ),
+                  ),
                   child: InkWell(
                     onTap: () {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text("Forum clicked!"),
-                          duration: Duration(seconds: 2),
+                        const SnackBar(
+                          content: Text(
+                            "Forum clicked!",
+                          ),
+                          duration: Duration(
+                            seconds: 2,
+                          ),
                         ),
                       );
                     },
@@ -242,16 +272,18 @@ class _ProfileInfoState extends State<ProfileInfo> {
                         Text(
                           "Forum",
                           style: TextStyle(
-                              color: silverColorTheme,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w700),
+                            color: silverColorTheme,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
                         Text(
                           widget.forumCount.toString(),
                           style: TextStyle(
-                              color: silverColorTheme,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500),
+                            color: silverColorTheme,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                          ),
                         )
                       ],
                     ),
@@ -262,15 +294,23 @@ class _ProfileInfoState extends State<ProfileInfo> {
                   width: 85,
                   // padding: EdgeInsets.symmetric(horizontal: 10),
                   decoration: BoxDecoration(
-                      border: Border(
-                          right:
-                              BorderSide(color: silverColorTheme, width: 2.0))),
+                    border: Border(
+                      right: BorderSide(
+                        color: silverColorTheme,
+                        width: 2.0,
+                      ),
+                    ),
+                  ),
                   child: InkWell(
                     onTap: () {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text("Following clicked!"),
-                          duration: Duration(seconds: 2),
+                        const SnackBar(
+                          content: Text(
+                            "Following clicked!",
+                          ),
+                          duration: Duration(
+                            seconds: 2,
+                          ),
                         ),
                       );
                     },
@@ -279,16 +319,18 @@ class _ProfileInfoState extends State<ProfileInfo> {
                         Text(
                           "Following",
                           style: TextStyle(
-                              color: silverColorTheme,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w700),
+                            color: silverColorTheme,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
                         Text(
                           widget.followingCount.toString(),
                           style: TextStyle(
-                              color: silverColorTheme,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500),
+                            color: silverColorTheme,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                          ),
                         )
                       ],
                     ),
@@ -299,15 +341,23 @@ class _ProfileInfoState extends State<ProfileInfo> {
                   width: 85,
                   // padding: EdgeInsets.symmetric(horizontal: 10),
                   decoration: BoxDecoration(
-                      border: Border(
-                          right:
-                              BorderSide(color: silverColorTheme, width: 2.0))),
+                    border: Border(
+                      right: BorderSide(
+                        color: silverColorTheme,
+                        width: 2.0,
+                      ),
+                    ),
+                  ),
                   child: InkWell(
                     onTap: () {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text("Follower clicked!"),
-                          duration: Duration(seconds: 2),
+                        const SnackBar(
+                          content: Text(
+                            "Follower clicked!",
+                          ),
+                          duration: Duration(
+                            seconds: 2,
+                          ),
                         ),
                       );
                     },
@@ -316,16 +366,18 @@ class _ProfileInfoState extends State<ProfileInfo> {
                         Text(
                           "Follower",
                           style: TextStyle(
-                              color: silverColorTheme,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w700),
+                            color: silverColorTheme,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
                         Text(
                           widget.followerCount.toString(),
                           style: TextStyle(
-                              color: silverColorTheme,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500),
+                            color: silverColorTheme,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                          ),
                         )
                       ],
                     ),
@@ -338,9 +390,13 @@ class _ProfileInfoState extends State<ProfileInfo> {
               child: GestureDetector(
                 onTap: () {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text("Ubah profil button clicked!"),
-                      duration: Duration(seconds: 2),
+                    const SnackBar(
+                      content: Text(
+                        "Ubah profil button clicked!",
+                      ),
+                      duration: Duration(
+                        seconds: 2,
+                      ),
                     ),
                   );
                 },
@@ -349,20 +405,27 @@ class _ProfileInfoState extends State<ProfileInfo> {
                   width: 360,
                   height: 30,
                   decoration: BoxDecoration(
-                      border: Border.all(width: 1.0, color: silverColorTheme),
-                      borderRadius: BorderRadius.all(Radius.circular(5))),
+                    border: Border.all(
+                      width: 1.0,
+                      color: silverColorTheme,
+                    ),
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(5),
+                    ),
+                  ),
                   child: Text(
                     "Ubah profil",
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                        fontSize: 14,
-                        color: silverColorTheme,
-                        fontWeight: FontWeight.w700),
+                      fontSize: 14,
+                      color: silverColorTheme,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Row(
@@ -372,9 +435,15 @@ class _ProfileInfoState extends State<ProfileInfo> {
                   width: 175,
                   height: 30,
                   decoration: BoxDecoration(
+                    color: silverColorTheme,
+                    border: Border.all(
+                      width: 1.0,
                       color: silverColorTheme,
-                      border: Border.all(width: 1.0, color: silverColorTheme),
-                      borderRadius: BorderRadius.all(Radius.circular(5))),
+                    ),
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(5),
+                    ),
+                  ),
                   child: GestureDetector(
                     onTap: () {
                       // ScaffoldMessenger.of(context).showSnackBar(
@@ -384,33 +453,46 @@ class _ProfileInfoState extends State<ProfileInfo> {
                       //   ),
                       // );
                       Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => MyForumList()));
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => MyForumList(),
+                        ),
+                      );
                     },
                     child: Center(
                       child: Text(
                         "Forum Saya",
                         style: TextStyle(
-                            fontSize: 14,
-                            color: redColorTheme,
-                            fontWeight: FontWeight.w700),
+                          fontSize: 14,
+                          color: redColorTheme,
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 Container(
                   width: 175,
                   height: 30,
                   decoration: BoxDecoration(
-                      // color: redColorTheme,
-                      gradient: LinearGradient(
-                          colors: [redColorTheme, darkRedColorTheme]),
-                      border: Border.all(width: 1.0, color: silverColorTheme),
-                      borderRadius: BorderRadius.all(Radius.circular(5))),
+                    // color: redColorTheme,
+                    gradient: LinearGradient(
+                      colors: [
+                        redColorTheme,
+                        darkRedColorTheme,
+                      ],
+                    ),
+                    border: Border.all(
+                      width: 1.0,
+                      color: silverColorTheme,
+                    ),
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(5),
+                    ),
+                  ),
                   child: GestureDetector(
                     onTap: () {
                       // ScaffoldMessenger.of(context).showSnackBar(
@@ -419,16 +501,21 @@ class _ProfileInfoState extends State<ProfileInfo> {
                       //     duration: Duration(seconds: 2),
                       //   ),
                       // );
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => ForumForm()));
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ForumForm(),
+                        ),
+                      );
                     },
                     child: Center(
                       child: Text(
                         "Tambah Forum",
                         style: TextStyle(
-                            fontSize: 14,
-                            color: silverColorTheme,
-                            fontWeight: FontWeight.w700),
+                          fontSize: 14,
+                          color: silverColorTheme,
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
                     ),
                   ),

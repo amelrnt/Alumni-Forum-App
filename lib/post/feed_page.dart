@@ -20,7 +20,7 @@ class _FeedPageState extends State<FeedPage> {
       body: Center(
         child: ListView.builder(
           itemBuilder: (context, index) {
-            return CardPost();
+            return const CardPost();
           },
           itemCount: 5,
         ),

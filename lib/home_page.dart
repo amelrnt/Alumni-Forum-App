@@ -22,17 +22,26 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   late final List<dynamic> _children; // Use late here
 
+  late FocusNode _searchNode; // Use late here
+
   @override
   void initState() {
     super.initState();
-    _tabController =
-        TabController(vsync: this, length: 2); // Define the number of tabs
+    _tabController = TabController(
+      vsync: this,
+      length: 2,
+    ); // Define the number of tabs
+
+    _searchNode = FocusNode();
 
     _children = [
       HomePageContent(
         title: "Home Page",
       ),
-      SearchPage(tabController: _tabController),
+      SearchPage(
+        tabController: _tabController,
+        searchNode: _searchNode,
+      ),
       AddPostWidget(),
       NotificationPage(),
       ProfilePage()
@@ -42,6 +51,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   @override
   void dispose() {
     _tabController.dispose();
+    _searchNode.dispose();
     super.dispose();
   }
 
@@ -94,7 +104,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           ),
           BottomNavigationBarItem(
             icon: _currentIndex == 2
-                ? Image.asset('assets/selected_add_post.png')
+                ? Image.asset(
+                    'assets/selected_add_post.png',
+                  )
                 : Image.asset(
                     'assets/add_post.png',
                   ),
@@ -124,10 +136,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   PreferredSizeWidget _buildAppBar() {
     if (_currentIndex == 1) {
       return defaultSearchBar(
-          hint: _appBarTitle[_currentIndex],
-          elevation: 0.0,
-          // vsync: this,
-          tabController: _tabController);
+        hint: _appBarTitle[_currentIndex],
+        elevation: 0.0,
+        tabController: _tabController,
+        searchNode: _searchNode,
+      );
     } else if (_currentIndex == 4) {
       return defaultAppBar(
         title: _appBarTitle[_currentIndex],
@@ -145,7 +158,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 class HomePageContent extends StatelessWidget {
   final String title;
 
-  HomePageContent({required this.title});
+  HomePageContent({
+    required this.title,
+  });
 
   @override
   Widget build(BuildContext context) {
