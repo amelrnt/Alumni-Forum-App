@@ -19,7 +19,10 @@ class _AddPostWidgetState extends State<AddPostWidget> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 25),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 25,
+                ),
                 child: Column(
                   children: [
                     Row(
@@ -31,19 +34,20 @@ class _AddPostWidgetState extends State<AddPostWidget> {
                           width: 40,
                           height: 40,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         Text(
                           "Yusril",
                           style: TextStyle(
-                              color: redColorTheme,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600),
+                            color: redColorTheme,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                          ),
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     SizedBox(
@@ -51,12 +55,15 @@ class _AddPostWidgetState extends State<AddPostWidget> {
                       child: TextField(
                         keyboardType: TextInputType.multiline,
                         maxLines: 4,
-                        decoration: InputDecoration(
-                            hintText: "Ketik postingan anda...",
-                            contentPadding:
-                                EdgeInsets.symmetric(horizontal: 10),
-                            border: InputBorder.none),
-                        style: TextStyle(color: grayColorTheme, fontSize: 14),
+                        decoration: const InputDecoration(
+                          hintText: "Ketik postingan anda...",
+                          contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                          border: InputBorder.none,
+                        ),
+                        style: TextStyle(
+                          color: grayColorTheme,
+                          fontSize: 14,
+                        ),
                       ),
                     )
                   ],
@@ -68,11 +75,18 @@ class _AddPostWidgetState extends State<AddPostWidget> {
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text("Send Floating Button Clicked!")));
+              const SnackBar(
+                content: Text(
+                  "Send Floating Button Clicked!",
+                ),
+              ),
+            );
           },
-          child: SvgPicture.asset('assets/send_icon.svg'),
           backgroundColor: darkRedColorTheme,
           foregroundColor: grayColorTheme,
+          child: SvgPicture.asset(
+            'assets/send_icon.svg',
+          ),
         ));
   }
 }

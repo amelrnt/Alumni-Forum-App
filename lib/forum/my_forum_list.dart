@@ -23,14 +23,21 @@ class _MyForumListState extends State<MyForumList> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: redColorTheme,
-        title: Text(
+        title: const Text(
           "Forum Saya",
-          style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
+          style: TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w700,
+          ),
         ),
         bottom: PreferredSize(
-            preferredSize: Size.fromHeight(kToolbarHeight),
+            preferredSize: const Size.fromHeight(
+              kToolbarHeight,
+            ),
             child: Padding(
-              padding: const EdgeInsets.only(bottom: 20.0),
+              padding: const EdgeInsets.only(
+                bottom: 20.0,
+              ),
               child: Center(
                 child: SizedBox(
                   width: 320,

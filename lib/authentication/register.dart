@@ -25,7 +25,10 @@ class _RegisterPageState extends State<RegisterPage> {
         body: Center(
             child: Form(
           child: Padding(
-            padding: EdgeInsets.only(left: 31, right: 31),
+            padding: const EdgeInsets.only(
+              left: 31,
+              right: 31,
+            ),
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -33,95 +36,138 @@ class _RegisterPageState extends State<RegisterPage> {
                   TextFormField(
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
-                        hintText: 'Masukkan Nama Lengkap',
-                        hintStyle: TextStyle(
-                            fontSize: 12.0, color: Colors.blueGrey[100]),
-                        contentPadding:
-                            EdgeInsets.symmetric(horizontal: 20, vertical: 2),
-                        label: Text(
-                          'Nama Lengkap',
-                          style: TextStyle(
-                              color: redColorTheme,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w600),
+                      hintText: 'Masukkan Nama Lengkap',
+                      hintStyle: TextStyle(
+                        fontSize: 12.0,
+                        color: Colors.blueGrey[100],
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 2,
+                      ),
+                      label: Text(
+                        'Nama Lengkap',
+                        style: TextStyle(
+                          color: redColorTheme,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
                         ),
-                        focusColor: redColorTheme,
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide:
-                                BorderSide(color: redColorTheme, width: 1)),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide:
-                                BorderSide(color: redColorTheme, width: 1)),
-                        focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide:
-                                BorderSide(color: redColorTheme, width: 1))),
+                      ),
+                      focusColor: redColorTheme,
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(
+                          color: redColorTheme,
+                          width: 1,
+                        ),
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(
+                          color: redColorTheme,
+                          width: 1,
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(
+                          color: redColorTheme,
+                          width: 1,
+                        ),
+                      ),
+                    ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
-                        hintText: 'Masukkan Email',
-                        hintStyle: TextStyle(
-                            fontSize: 12.0, color: Colors.blueGrey[100]),
-                        contentPadding:
-                            EdgeInsets.symmetric(horizontal: 20, vertical: 2),
-                        label: Text(
-                          'Email',
-                          style: TextStyle(
-                              color: redColorTheme,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w600),
+                      hintText: 'Masukkan Email',
+                      hintStyle: TextStyle(
+                        fontSize: 12.0,
+                        color: Colors.blueGrey[100],
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 2,
+                      ),
+                      label: Text(
+                        'Email',
+                        style: TextStyle(
+                          color: redColorTheme,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
                         ),
-                        focusColor: redColorTheme,
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide:
-                                BorderSide(color: redColorTheme, width: 1)),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide:
-                                BorderSide(color: redColorTheme, width: 1)),
-                        focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide:
-                                BorderSide(color: redColorTheme, width: 1))),
+                      ),
+                      focusColor: redColorTheme,
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(
+                          color: redColorTheme,
+                          width: 1,
+                        ),
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(
+                          color: redColorTheme,
+                          width: 1,
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(
+                          color: redColorTheme,
+                          width: 1,
+                        ),
+                      ),
+                    ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   InputDecorator(
                     isEmpty: _jabatanSelectedValue == '',
                     decoration: InputDecoration(
-                        // hintText: 'Masukkan Jabatan',
-                        // hintStyle: TextStyle(
-                        //     fontSize: 12.0, color: Colors.blueGrey[100]),
-                        contentPadding:
-                            EdgeInsets.symmetric(horizontal: 20, vertical: 2),
-                        label: Text(
-                          'Jabatan',
-                          style: TextStyle(
-                              color: redColorTheme,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w600),
+                      // hintText: 'Masukkan Jabatan',
+                      // hintStyle: TextStyle(
+                      //     fontSize: 12.0, color: Colors.blueGrey[100]),
+                      contentPadding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 2,
+                      ),
+                      label: Text(
+                        'Jabatan',
+                        style: TextStyle(
+                          color: redColorTheme,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
                         ),
-                        focusColor: redColorTheme,
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide:
-                                BorderSide(color: redColorTheme, width: 1)),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide:
-                                BorderSide(color: redColorTheme, width: 1)),
-                        focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide:
-                                BorderSide(color: redColorTheme, width: 1))),
+                      ),
+                      focusColor: redColorTheme,
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(
+                          color: redColorTheme,
+                          width: 1,
+                        ),
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(
+                          color: redColorTheme,
+                          width: 1,
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(
+                          color: redColorTheme,
+                          width: 1,
+                        ),
+                      ),
+                    ),
                     child: DropdownButtonHideUnderline(
                       child: DropdownButton<String>(
                         value: _jabatanSelectedValue,
@@ -141,71 +187,99 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   TextFormField(
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
-                        hintText: 'Masukkan Instansi',
-                        hintStyle: TextStyle(
-                            fontSize: 12.0, color: Colors.blueGrey[100]),
-                        contentPadding:
-                            EdgeInsets.symmetric(horizontal: 20, vertical: 2),
-                        label: Text(
-                          'Instansi',
-                          style: TextStyle(
-                              color: redColorTheme,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w600),
+                      hintText: 'Masukkan Instansi',
+                      hintStyle: TextStyle(
+                          fontSize: 12.0, color: Colors.blueGrey[100]),
+                      contentPadding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 2,
+                      ),
+                      label: Text(
+                        'Instansi',
+                        style: TextStyle(
+                          color: redColorTheme,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
                         ),
-                        focusColor: redColorTheme,
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide:
-                                BorderSide(color: redColorTheme, width: 1)),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide:
-                                BorderSide(color: redColorTheme, width: 1)),
-                        focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide:
-                                BorderSide(color: redColorTheme, width: 1))),
+                      ),
+                      focusColor: redColorTheme,
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(
+                          color: redColorTheme,
+                          width: 1,
+                        ),
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(
+                          color: redColorTheme,
+                          width: 1,
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(
+                          color: redColorTheme,
+                          width: 1,
+                        ),
+                      ),
+                    ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   TextFormField(
                     keyboardType: TextInputType.visiblePassword,
                     decoration: InputDecoration(
-                        hintText: 'Masukkan Kata Sandi',
-                        hintStyle: TextStyle(
-                            fontSize: 12.0, color: Colors.blueGrey[100]),
-                        contentPadding:
-                            EdgeInsets.symmetric(horizontal: 20, vertical: 2),
-                        label: Text(
-                          'Kata Sandi',
-                          style: TextStyle(
-                              color: redColorTheme,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w600),
+                      hintText: 'Masukkan Kata Sandi',
+                      hintStyle: TextStyle(
+                        fontSize: 12.0,
+                        color: Colors.blueGrey[100],
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 2,
+                      ),
+                      label: Text(
+                        'Kata Sandi',
+                        style: TextStyle(
+                          color: redColorTheme,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
                         ),
-                        focusColor: redColorTheme,
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide:
-                                BorderSide(color: redColorTheme, width: 1)),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide:
-                                BorderSide(color: redColorTheme, width: 1)),
-                        focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide:
-                                BorderSide(color: redColorTheme, width: 1))),
+                      ),
+                      focusColor: redColorTheme,
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(
+                          color: redColorTheme,
+                          width: 1,
+                        ),
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(
+                          color: redColorTheme,
+                          width: 1,
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(
+                          color: redColorTheme,
+                          width: 1,
+                        ),
+                      ),
+                    ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 24,
                   ),
                   ElevatedButton(
@@ -222,19 +296,26 @@ class _RegisterPageState extends State<RegisterPage> {
                     child: Text(
                       'Register',
                       style: TextStyle(
-                          color: silverColorTheme,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w600),
+                        color: silverColorTheme,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.of(context).pushReplacement(MaterialPageRoute(
-                          builder: ((context) => SignInPage())));
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) => const SignInPage(),
+                        ),
+                      );
                     },
                     child: Text(
                       'Sudah memiliki akun? klik di sini',
-                      style: TextStyle(color: redColorTheme, fontSize: 13),
+                      style: TextStyle(
+                        color: redColorTheme,
+                        fontSize: 13,
+                      ),
                     ),
                   )
                 ]),

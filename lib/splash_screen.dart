@@ -16,8 +16,11 @@ class _SplashScreenState extends State<SplashScreen> {
   startSplashScreen() async {
     var duration = const Duration(seconds: 3);
     return Timer(duration, () {
-      Navigator.of(context)
-          .push(MaterialPageRoute(builder: ((context) => const HomePage())));
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => const HomePage(),
+        ),
+      );
       // Navigator.of(context).pushReplacement(
       //     MaterialPageRoute(builder: ((context) => SignInPage())));
     });
@@ -43,32 +46,35 @@ class _SplashScreenState extends State<SplashScreen> {
           Text(
             "Forum Alumni Apps".toUpperCase(),
             style: TextStyle(
-                color: silverColorTheme,
-                fontSize: 18,
-                fontWeight: FontWeight.w700),
+              color: silverColorTheme,
+              fontSize: 18,
+              fontWeight: FontWeight.w700,
+            ),
           ),
           Text(
             "Teknik Mesin",
             style: TextStyle(
-                color: silverColorTheme,
-                fontSize: 14,
-                fontWeight: FontWeight.w600),
+              color: silverColorTheme,
+              fontSize: 14,
+              fontWeight: FontWeight.w600,
+            ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 81,
           ),
           SvgPicture.asset(
             'assets/app_logo.svg',
           ),
-          SizedBox(
+          const SizedBox(
             height: 150,
           ),
           Text(
             "Copyright Teknik Mesin \u00a9 2022",
             style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w600,
-                color: silverColorTheme),
+              fontSize: 12,
+              fontWeight: FontWeight.w600,
+              color: silverColorTheme,
+            ),
           )
         ],
       )),

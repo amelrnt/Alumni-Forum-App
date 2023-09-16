@@ -1,4 +1,4 @@
-import 'dart:ui';
+// import 'dart:ui';
 
 import 'package:alumni_forum_app/helper/custom_theme.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +18,10 @@ class _CardPostState extends State<CardPost> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.only(top: widget.topSpace, bottom: widget.bottomSpace),
+      margin: EdgeInsets.only(
+        top: widget.topSpace,
+        bottom: widget.bottomSpace,
+      ),
       color: grayColorTheme,
       child: Column(
         children: [
@@ -52,14 +55,20 @@ class ForumHeader extends StatelessWidget {
   final String forumTitle;
   final String forumSubtitle;
 
-  ForumHeader({this.forumTitle = "", this.forumSubtitle = ""});
+  ForumHeader({
+    this.forumTitle = "",
+    this.forumSubtitle = "",
+  });
 
   @override
   Widget build(BuildContext context) {
     return Ink(
       color: silverColorTheme,
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 20,
+          vertical: 5,
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -69,39 +78,56 @@ class ForumHeader extends StatelessWidget {
                 Text(
                   forumTitle,
                   style: TextStyle(
-                      color: redColorTheme,
-                      fontSize: 9,
-                      fontWeight: FontWeight.w600),
+                    color: redColorTheme,
+                    fontSize: 9,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
                 Text(
                   forumSubtitle,
                   style: TextStyle(
-                      color: redColorTheme,
-                      fontSize: 10,
-                      fontWeight: FontWeight.w400),
+                    color: redColorTheme,
+                    fontSize: 10,
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
               ],
             ),
             TextButton(
               onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                  content: Text("Buka Forum Button Clicked!"),
-                ));
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text(
+                      "Buka Forum Button Clicked!",
+                    ),
+                  ),
+                );
               },
-              child: Text(
-                "Buka Forum",
-                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 10),
-              ),
               style: ButtonStyle(
-                  padding: MaterialStateProperty.all<EdgeInsets>(
-                      EdgeInsets.symmetric(horizontal: 10)),
-                  foregroundColor:
-                      MaterialStateProperty.all<Color>(grayColorTheme),
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(redColorTheme),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(25)))),
+                padding: MaterialStateProperty.all<EdgeInsets>(
+                  const EdgeInsets.symmetric(
+                    horizontal: 10,
+                  ),
+                ),
+                foregroundColor: MaterialStateProperty.all<Color>(
+                  grayColorTheme,
+                ),
+                backgroundColor: MaterialStateProperty.all<Color>(
+                  redColorTheme,
+                ),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                ),
+              ),
+              child: const Text(
+                "Buka Forum",
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 10,
+                ),
+              ),
             )
           ],
         ),
@@ -114,14 +140,20 @@ class ProfileInfo extends StatelessWidget {
   final String profileName;
   final String profileRole;
 
-  ProfileInfo({this.profileName = "", this.profileRole = ""});
+  ProfileInfo({
+    this.profileName = "",
+    this.profileRole = "",
+  });
 
   @override
   Widget build(BuildContext context) {
     return Ink(
       color: grayColorTheme,
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 20,
+          vertical: 15,
+        ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -129,9 +161,13 @@ class ProfileInfo extends StatelessWidget {
             // Profile Section
             InkWell(
               onTap: () {
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                  content: Text("Profile Section Clicked!"),
-                ));
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text(
+                      "Profile Section Clicked!",
+                    ),
+                  ),
+                );
               },
               child: Row(
                 children: [
@@ -139,7 +175,7 @@ class ProfileInfo extends StatelessWidget {
                     backgroundColor: redColorTheme,
                     radius: 15,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 8,
                   ),
                   Column(
@@ -148,16 +184,18 @@ class ProfileInfo extends StatelessWidget {
                       Text(
                         profileName.toUpperCase(),
                         style: TextStyle(
-                            color: redColorTheme,
-                            fontSize: 10,
-                            fontWeight: FontWeight.w600),
+                          color: redColorTheme,
+                          fontSize: 10,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                       Text(
                         profileRole,
                         style: TextStyle(
-                            color: redColorTheme,
-                            fontSize: 9,
-                            fontWeight: FontWeight.w400),
+                          color: redColorTheme,
+                          fontSize: 9,
+                          fontWeight: FontWeight.w400,
+                        ),
                       ),
                     ],
                   )
@@ -171,20 +209,28 @@ class ProfileInfo extends StatelessWidget {
                 Text(
                   "2 hari yang lalu",
                   style: TextStyle(
-                      color: redColorTheme,
-                      fontSize: 8,
-                      fontWeight: FontWeight.w400),
+                    color: redColorTheme,
+                    fontSize: 8,
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 InkWell(
-                    onTap: () {
-                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                        content: Text("Option Button Clicked!"),
-                      ));
-                    },
-                    child: SvgPicture.asset('assets/option_button.svg'))
+                  onTap: () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text(
+                          "Option Button Clicked!",
+                        ),
+                      ),
+                    );
+                  },
+                  child: SvgPicture.asset(
+                    'assets/option_button.svg',
+                  ),
+                ),
               ],
             )
           ],
@@ -197,24 +243,37 @@ class ProfileInfo extends StatelessWidget {
 class PostContent extends StatelessWidget {
   final String content;
 
-  PostContent({this.content = ""});
+  PostContent({
+    this.content = "",
+  });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        ScaffoldMessenger.of(context)
-            .showSnackBar(SnackBar(content: Text("Section Content Clicked!")));
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text(
+              "Section Content Clicked!",
+            ),
+          ),
+        );
       },
       child: Ink(
         color: grayColorTheme,
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 25,
+            vertical: 15,
+          ),
           child: Text(
             content,
             maxLines: 4,
             overflow: TextOverflow.ellipsis,
-            style: TextStyle(color: darkRedColorTheme, fontSize: 15),
+            style: TextStyle(
+              color: darkRedColorTheme,
+              fontSize: 15,
+            ),
           ),
         ),
       ),
@@ -226,12 +285,18 @@ class ReactionsBar extends StatelessWidget {
   final int reactions;
   final int comments;
 
-  ReactionsBar({this.reactions = 0, this.comments = 0});
+  ReactionsBar({
+    this.reactions = 0,
+    this.comments = 0,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 30,
+        vertical: 15,
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         // crossAxisAlignment: CrossAxisAlignment.center,
@@ -241,7 +306,12 @@ class ReactionsBar extends StatelessWidget {
               InkWell(
                 onTap: () {
                   ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text("Reaction Clicked!")));
+                    const SnackBar(
+                      content: Text(
+                        "Reaction Clicked!",
+                      ),
+                    ),
+                  );
                 },
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -251,23 +321,31 @@ class ReactionsBar extends StatelessWidget {
                       width: 13,
                       height: 13,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 5,
                     ),
                     Text(
                       reactions.toString(),
-                      style: TextStyle(fontSize: 10, color: redColorTheme),
+                      style: TextStyle(
+                        fontSize: 10,
+                        color: redColorTheme,
+                      ),
                     )
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
               InkWell(
                 onTap: () {
                   ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text("Comment Clicked!")));
+                    const SnackBar(
+                      content: Text(
+                        "Comment Clicked!",
+                      ),
+                    ),
+                  );
                 },
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -277,12 +355,15 @@ class ReactionsBar extends StatelessWidget {
                       width: 13,
                       height: 13,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 5,
                     ),
                     Text(
                       comments.toString(),
-                      style: TextStyle(fontSize: 10, color: redColorTheme),
+                      style: TextStyle(
+                        fontSize: 10,
+                        color: redColorTheme,
+                      ),
                     )
                   ],
                 ),
@@ -291,8 +372,13 @@ class ReactionsBar extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
-              ScaffoldMessenger.of(context)
-                  .showSnackBar(SnackBar(content: Text("Share Clicked!")));
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    "Share Clicked!",
+                  ),
+                ),
+              );
             },
             child: Row(
               children: [
@@ -306,7 +392,10 @@ class ReactionsBar extends StatelessWidget {
                 ),
                 Text(
                   "Share",
-                  style: TextStyle(fontSize: 10, color: redColorTheme),
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: redColorTheme,
+                  ),
                 )
               ],
             ),
