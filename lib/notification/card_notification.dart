@@ -551,9 +551,12 @@ class LikedPost extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 25),
-                  child: Image.asset(
-                    'assets/apple_example.png',
-                    width: 50,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset(
+                      'assets/apple_example.png',
+                      width: 50,
+                    ),
                   ),
                 )
               ],
@@ -682,9 +685,12 @@ class CommentPost extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 25),
-                  child: Image.asset(
-                    'assets/apple_example.png',
-                    width: 50,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset(
+                      'assets/apple_example.png',
+                      width: 50,
+                    ),
                   ),
                 )
               ],
