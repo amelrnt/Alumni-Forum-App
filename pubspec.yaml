@@ -81,6 +81,8 @@ flutter:
     - assets/profile_forum_plus_unclicked.png
     - assets/cover_forum.png
     - assets/cam_icon.png
+    - assets/more_option.png
+    - assets/apple_example.png
     - i18n/en.json
     - i18n/id.json
 

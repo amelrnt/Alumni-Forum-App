@@ -37,7 +37,7 @@ PreferredSizeWidget defaultSearchBar({
   TabBar tabBar = TabBar(
     // indicatorColor: Color(0xffB7A5A5),
     indicator: BoxDecoration(
-      color: silverColorTheme,
+      color: grayColorTheme,
       // borderRadius: BorderRadius.only(
       //   topLeft: _currentTabIndex == 1 ? Radius.circular(20) : Radius.zero,
       //   topRight: _currentTabIndex == 0 ? Radius.circular(20) : Radius.zero,
